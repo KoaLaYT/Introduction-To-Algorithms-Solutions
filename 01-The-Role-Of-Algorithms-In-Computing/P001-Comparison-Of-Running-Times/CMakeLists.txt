@@ -1,0 +1,1 @@
+add_executable("P01001" solution.cpp)
