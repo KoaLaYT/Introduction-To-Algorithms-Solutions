@@ -56,7 +56,7 @@ There are two cases that can terminate the algorithm:
 -   find a `i` that `v = A[i]`, which then return this `i`
 -   `i` larger than `A.length`, which then return `NIL`
 
-Both results are meet the requirement.
+Both results meet the requirement.
 
 ### 2.1-4
 
