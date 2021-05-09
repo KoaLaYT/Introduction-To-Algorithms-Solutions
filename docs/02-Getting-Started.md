@@ -53,8 +53,8 @@ The loop will continue only if `A[i] != v`, which changes nothing.
 
 There are two cases that can terminate the algorithm:
 
--   find a `i` that `v = A[i]`, which then return this `i`
--   `i` larger than `A.length`, which then return `NIL`
+-   find a `i` that `v = A[i]`, which then returns this `i`
+-   `i` larger than `A.length`, which then returns `NIL`
 
 Both results meet the requirement.
 
