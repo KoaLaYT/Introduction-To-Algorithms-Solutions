@@ -39,4 +39,4 @@
 
 For the sake of saving time, I set the limit as one hundred million, every number bigger than it shows as `inf`.
 
-![Sceenshot of Problem 1-1](https://i.imgur.com/BeDDMXH.png)
+![Screenshot of Problem 1-1](https://i.imgur.com/BeDDMXH.png)
