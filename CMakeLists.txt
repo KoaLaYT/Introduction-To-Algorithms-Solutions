@@ -14,3 +14,4 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 find_package(GTest CONFIG REQUIRED)
 
 add_subdirectory("01-The-Role-Of-Algorithms-In-Computing")
+add_subdirectory("02-Getting-Started")
