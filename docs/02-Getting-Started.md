@@ -125,6 +125,7 @@ There is no subarray when `i = 1`.
 In each iteration, subarray `A[i..]`'s minimal value is found, and swaped to index `i`, so make the subarray `A[1..i]` sorted.
 
 **Termination:**
+
 Every element in subarray[1..A.length-1] is sorted, and `A[A.length]` will have the maximal value. So the entire array A is now sorted.
 
 Both best case and worst case running time is `Θ(n^2)`. Because no matter what input it takes, it needs to scan the rest subarray in each iteration to find the new minimal value.
