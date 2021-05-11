@@ -181,3 +181,10 @@ MERGE(A, p, q, r)
             A[k] = R[j]
             j = j + 1
 ```
+
+### 2.3-3
+
+> Use mathematical induction to show that when `n` is an exact power of 2, the solution of the recurrence is `T(n) = nlgn`.
+> ![Screenshot of E2.3-3#1](https://imgur.com/RpluKr3.png)
+
+![Screenshot of E2.3-3#2](https://imgur.com/IwLJl75.png)
