@@ -1,6 +1,6 @@
 ## Exercises
 
-### 2-1.1
+### 2.1-1
 
 > Using Figure 2.2 as a model, illustrate the operation of INSERTION-SORT on the array `A = { 31, 41, 59, 26, 41, 58 }`.
 
@@ -228,3 +228,27 @@ No. In each iteration, we can use binary search to find the right slot in `Θ(lg
 2. Iterate every element in sorted S, using binary search to find the element `x - S[i]`. Each iteration takes `Θ(lgn)`, so in worst case will take `Θ(nlgn)`.
 
 So the overall running time in worst case is `Θ(nlgn)`.
+
+---
+
+## Problems
+
+### 2.1 Insertion sort on small arrays in merge sort
+
+> Although merge sort runs in `Θ(nlgn)` worst case time and insertion sort runs in `Θ(n^2)` worst case time, the constant factors in insertion sort can make it faster in practice for small problem sizes on many machines. Thus, it makes sense to **coarsen** the leaves of the recursion by using insertion sort within merge sort when subproblems become sufficiently small. Consider a modification to merge sort in which `n/k` sublists of length `k` are sorted using insertion sort and then merged using the standard merging mechanism, where `k` is a value to be determined.
+>
+> a. Show that insertion sort can sort the `n/k` sublists, each of length `k`, in `Θ(nk)` worst case time.
+>
+> b. Show how to merge the sublists in `Θ(nlg(n/k))` worst case time.
+>
+> c. Given that the modified algorithm runs in `Θ(nk + nlg(n/k))` worst case time, what is the largest value of `k` as a function of `n` for which the modified algorithm has the same running time as standard merge sort, in terms of Θ-notation?
+>
+> d. How should we choose `k` in practice?
+
+a. Insertion sort's running time is `Θ(k^2)` for length `k`, so for `n/k` lists, the total running time is `Θ(k^2 * n / k) = Θ(nk)`.
+
+b. Each leaf has `k` element, so the depth is `2^d * k = n => d = lg(n/k)`. And on each level of depth it takes `Θ(n)` to do the merge. So the total running time is `Θ(nlg(n/k))`.
+
+c. `k = lg(n)` according to https://walkccc.me/CLRS/Chap02/Problems/2-1/
+
+d. The largest `k` which insertion sort is faster.
