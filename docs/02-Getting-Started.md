@@ -357,3 +357,56 @@ c.**Initialization:**
 **Termination:**
 
 `i = -1 => y = P(x)`
+
+### 2-4 Inversions
+
+> Let `A[1..n]` be an array of `n` distinct numbers. If `i < j` and `A[i] > A[j]`, then the pair `(i, j)` is called an **inversion** of A.
+>
+> a. List the five inversions of the array `{ 2, 3, 8, 6, 1 }`.
+>
+> b. What array with elements from the set `{ 1, 2, ..., n }` has the most inversions? How many does it have?
+>
+> c. What is the relationship between the running time of insertion sort and the number of inversions in the input array? Justify your answer.
+>
+> d. Give an algorithm that determines the number of inversions in any permutation on `n` elements in `Θ(nlgn)` worst case time. (Hint: Modify merge sort.)
+
+a. `(1, 5)`, `(2, 5)`, `(3, 4)`, `(3, 5)`, `(4, 5)`
+
+b. A decreasingly ordered array has the most inversions which equals `n(n-1)/2`
+
+c. If an array has `k` inversions, then the running time of insertion sort is `Θ(k)`.
+
+d. When do merge sort, we keep counting inversions along the way. Pseudocode:
+
+```
+COUNT-INVERSIONS(A, lo, hi)
+    if lo >= hi
+        return 0
+    mi = lo + (hi - lo) / 2
+    left = COUNT-INVERSIONS(A, lo, mi)
+    right = COUNT-INVERSIONS(A, mi + 1, hi)
+    return MERGE(A, lo, mi, hi) + left + right
+
+MERGE(A, lo, mi, hi)
+    n1 = mi - lo + 1
+    n2 = hi - mi
+    let L[n1 + 1] and R[n2 + 1] be new array
+    for i = 1 to n1
+        L[i] = A[lo + i - 1]
+    for j = 1 to n2
+        R[j] = A[mi + j]
+    L[n1 + 1] = ∞
+    R[n2 + 1] = ∞
+    i = 1
+    j = 1
+    count = 0
+    for k = lo to hi
+        if L[i] < R[j]
+            A[k] = L[i]
+            i = i + 1
+        else
+            count = count + n1 - i + 1
+            A[k] = R[j]
+            j = j + 1
+    return count
+```
