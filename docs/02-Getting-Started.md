@@ -279,36 +279,81 @@ d. The largest `k` which insertion sort is faster.
 
 a. We need to prove `A'` contians exact elements as in `A`, but is in sorted order.
 
-b. **Loop invariant:**
+b. **Loop invariant:** At start of each iteration, subarray A[j..A.length] has exact same element as before, but with smallest element at A[j].
 
-At start of each iteration, subarray A[j..A.length] has exact same element as before, but with smallest element at A[j].
+**Initialization:** Subarray has only one element. So invariant holds.
 
-**Initialization:**
+c**Maintenance:** Each iteration will exchange the smaller element to `A[j]`. So invariant holds.
 
-Subarray has only one element. So invariant holds.
+**Termination:** When loop end, the smallest element has been exchanged to `A[i]` which holds the invariant.
 
-**Maintenance:**
+c. **Loop invariant:** At start of each iteration, subarray `A[1..i-1]` contains `i - 1` smallest elements in Array `A` and is in sorted order.
 
-Each iteration will exchange the smaller element to `A[j]`. So invariant holds.
+**Initialization:** Subarray is empty.
 
-**Termination:**
+**Maintenance:** According to part (b), the smallest element among `A[i..]` will be put into `A[i]`, so the invariant holds.
 
-When loop end, the smallest element has been exchanged to `A[i]` which holds the invariant.
-
-c. **Loop invariant:**
-
-At start of each iteration, subarray `A[1..i-1]` contains `i - 1` smallest elements in Array `A` and is in sorted order.
-
-**Initialization:**
-
-Subarray is empty.
-
-**Maintenance:**
-
-According to part (b), the smallest element among `A[i..]` will be put into `A[i]`, so the invariant holds.
-
-**Termination:**
-
-When loop end, all elements will be in sorted order.
+**Termination:** When loop end, all elements will be in sorted order.
 
 d. Both have `Θ(n^2)` worst case running time.
+
+### 2-3 Correctness of Horner’s rule
+
+> The following code fragment implements Horner’s rule for evaluating a polynomial.
+>
+> <img src="https://imgur.com/MSo1uTk.png" alt="Screenshot of P2.3#1" width="50%" />
+>
+> given the coefficients `a0, a1, ..., an` and a value for `x`:
+>
+> ```
+> y = 0
+> for i = n downto 0
+>   y = ai + x * y
+> ```
+>
+> a. In terms of Θ-notation, what is the running time of this code fragment for Horner’s rule?
+>
+> b. Write pseudocode to implement the naive polynomial-evaluation algorithm that computes each term of the polynomial from scratch. What is the running time of this algorithm? How does it compare to Horner’s rule?
+>
+> c. Consider the following loop invariant:
+>
+> At the start of each iteration of the for loop,
+>
+> <img src="https://imgur.com/eYfCGIB.png" alt="Screenshot of P2.3#2" width="25%" />
+>
+> Interpret a summation with no terms as equaling `0`. Following the structure of the loop invariant proof presented in this chapter, use this loop invariant to show that, at termination, `y = P(x)`.
+>
+> d. Conclude by arguing that the given code fragment correctly evaluates a polynomial characterized by the coefficients `a0, a1, ..., an`.
+
+a. `Θ(n)`
+
+b. Pseudocode:
+
+```
+NAIVE-POLYNOMIAL-EVALUATION(x)
+    y = 0
+    for i = 0 to n
+        y = y + a[i] * POW(x, i)
+    return y
+
+POW(x, i)
+    mul = 1
+    while i > 0
+        mul = mul * x
+        i = i - 1
+    return mul
+```
+
+Running time is `Θ(n^2)`, because of nest loop.
+
+c.**Initialization:**
+
+`i = n => y = 0`
+
+**Maintenance:**
+
+<img src="https://imgur.com/mbLi7Rx.png" alt="Screenshot of P2.3" width="50%" />
+
+**Termination:**
+
+`i = -1 => y = P(x)`
