@@ -252,3 +252,63 @@ b. Each leaf has `k` element, so the depth is `2^d * k = n => d = lg(n/k)`. And 
 c. `k = Θ(lgn)` according to https://walkccc.me/CLRS/Chap02/Problems/2-1/
 
 d. The largest `k` which insertion sort is faster.
+
+### 2.2 Correctness of bubblesort
+
+> Bubblesort is a popular, but inefficient, sorting algorithm. It works by repeatedly swapping adjacent elements that are out of order.
+>
+> ```
+> BUBBLESORT(A)
+>   for i = 1 to A.length - 1
+>       for j = A.length downto i + 1
+>           if A[j] < A[j - 1]
+>               exchange A[j] with A[j - 1]
+> ```
+>
+> a. Let `A'` denote the output of `BUBBLESORT(A)`. To prove that `BUBBLESORT` is correct, we need to prove that it terminates and that
+>
+> `A'[1] <= A'[2] <= ... <= A'[n]`, where `n = A.length`.
+>
+> In order to show that `BUBBLESORT` actually sorts, what else do we need to prove?
+>
+> b. State precisely a loop invariant for the for loop in lines 2–4, and prove that this loop invariant holds. Your proof should use the structure of the loop invariant proof presented in this chapter.
+>
+> c. Using the termination condition of the loop invariant proved in part (b), state a loop invariant for the for loop in lines 1–4 that will allow you to prove inequality in part (a). Your proof should use the structure of the loop invariant proof presented in this chapter.
+>
+> d. What is the worst case running time of bubblesort? How does it compare to the running time of insertion sort?
+
+a. We need to prove `A'` contians exact elements as in `A`, but is in sorted order.
+
+b. **Loop invariant:**
+
+At start of each iteration, subarray A[j..A.length] has exact same element as before, but with smallest element at A[j].
+
+**Initialization:**
+
+Subarray has only one element. So invariant holds.
+
+**Maintenance:**
+
+Each iteration will exchange the smaller element to `A[j]`. So invariant holds.
+
+**Termination:**
+
+When loop end, the smallest element has been exchanged to `A[i]` which holds the invariant.
+
+c. **Loop invariant:**
+
+At start of each iteration, subarray `A[1..i-1]` contains `i - 1` smallest elements in Array `A` and is in sorted order.
+
+**Initialization:**
+
+Subarray is empty.
+
+**Maintenance:**
+
+According to part (b), the smallest element among `A[i..]` will be put into `A[i]`, so the invariant holds.
+
+**Termination:**
+
+When loop end, all elements will be in sorted order.
+
+d. Both have `Θ(n^2)` worst case running time.
