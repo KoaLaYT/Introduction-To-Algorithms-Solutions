@@ -249,6 +249,6 @@ a. Insertion sort's running time is `Θ(k^2)` for length `k`, so for `n/k` lists
 
 b. Each leaf has `k` element, so the depth is `2^d * k = n => d = lg(n/k)`. And on each level of depth it takes `Θ(n)` to do the merge. So the total running time is `Θ(nlg(n/k))`.
 
-c. `k = lg(n)` according to https://walkccc.me/CLRS/Chap02/Problems/2-1/
+c. `k = Θ(lgn)` according to https://walkccc.me/CLRS/Chap02/Problems/2-1/
 
 d. The largest `k` which insertion sort is faster.
