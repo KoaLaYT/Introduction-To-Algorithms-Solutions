@@ -4,7 +4,7 @@
 
 > Using Figure 2.2 as a model, illustrate the operation of INSERTION-SORT on the array `A = { 31, 41, 59, 26, 41, 58 }`.
 
-![Screenshot of exercises 2-1.1](https://imgur.com/IpLRbre.png)
+<img src="https://imgur.com/IpLRbre.png" alt="Screenshot of exercises 2-1.1" width="50%" />
 
 ### 2.1-2
 
@@ -150,7 +150,7 @@ I guess we just can't.
 
 > Using Figure 2.4 as a model, illustrate the operation of merge sort on the array `A = { 3, 41, 52, 26, 38, 57, 9, 49 }`.
 
-![Screenshot of E2.3-1](https://imgur.com/hrKncTm.png)
+<img src="https://imgur.com/hrKncTm.png" alt="Screenshot of E2.3-1" width="50%" />
 
 ### 2.3-2
 
@@ -185,6 +185,12 @@ MERGE(A, p, q, r)
 ### 2.3-3
 
 > Use mathematical induction to show that when `n` is an exact power of 2, the solution of the recurrence is `T(n) = nlgn`.
-> ![Screenshot of E2.3-3#1](https://imgur.com/RpluKr3.png)
+> <img src="https://imgur.com/RpluKr3.png" alt="Screenshot of E2.3-3#1" width="50%" />
 
-![Screenshot of E2.3-3#2](https://imgur.com/IwLJl75.png)
+<img src="https://imgur.com/IwLJl75.png" alt="Screenshot of E2.3-3#2" width="50%" />
+
+### 2.3-4
+
+> We can express insertion sort as a recursive procedure as follows. In order to sort `A[1..n]`, we recursively sort `A[1..n-1]` and then insert `A[n]` into the sorted array `A[1..n-1]`. Write a recurrence for the running time of this recursive version of insertion sort.
+
+<img src="https://imgur.com/LBwopTD.png" alt="Screenshot of E2.3-4" width="50%" />
