@@ -283,7 +283,7 @@ b. **Loop invariant:** At start of each iteration, subarray A[j..A.length] has e
 
 **Initialization:** Subarray has only one element. So invariant holds.
 
-c**Maintenance:** Each iteration will exchange the smaller element to `A[j]`. So invariant holds.
+**Maintenance:** Each iteration will exchange the smaller element to `A[j]`. So invariant holds.
 
 **Termination:** When loop end, the smallest element has been exchanged to `A[i]` which holds the invariant.
 
