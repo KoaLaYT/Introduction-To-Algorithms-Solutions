@@ -194,3 +194,37 @@ MERGE(A, p, q, r)
 > We can express insertion sort as a recursive procedure as follows. In order to sort `A[1..n]`, we recursively sort `A[1..n-1]` and then insert `A[n]` into the sorted array `A[1..n-1]`. Write a recurrence for the running time of this recursive version of insertion sort.
 
 <img src="https://imgur.com/LBwopTD.png" alt="Screenshot of E2.3-4" width="50%" />
+
+### 2.3.5
+
+> Referring back to the searching problem (see Exercise 2.1-3), observe that if the sequence A is sorted, we can check the midpoint of the sequence against `v` and eliminate half of the sequence from further consideration. The binary search algorithm repeats this procedure, halving the size of the remaining portion of the sequence each time. Write pseudocode, either iterative or recursive, for binary search. Argue that the worst case running time of binary search is `Θ(lgn)`.
+
+Pseudocode:
+
+```
+BINARY-SEARCH(A, v, lo, hi)
+    if (lo > hi)
+        return NIL
+    mi = lo + (hi - lo) / 2
+    if (A[mi] < v)
+        return BINARY-SEARCH(A, v, mi + 1, hi)
+    else if (A[mi] > v)
+        return BINARY-SEARCH(A, v, lo, mi - 1)
+    else
+        return mi
+```
+
+### 2.3-6
+
+> Observe that the while loop of lines 5–7 of the INSERTION-SORT procedure in Section 2.1 uses a linear search to scan (backward) through the sorted subarray `A[1..j-1]`. Can we use a binary search (see Exercise 2.3-5) instead to improve the overall worst case running time of insertion sort to `Θ(nlgn)`?
+
+No. In each iteration, we can use binary search to find the right slot in `Θ(lgn)`, but to actually insert it, we still need to move `n` elements in worse case which takes `Θ(n)` time. So the total running time is still `Θ(n^2)` in worst case.
+
+### 2.3-7
+
+> Describe a `Θ(nlgn)` time algorithm that, given a set S of `n` integers and another integer `x`, determines whether or not there exist two elements in S whose sum is exactly `x`.
+
+1. Sort the given S, takes `Θ(nlgn)`.
+2. Iterate every element in sorted S, using binary search to find the element `x - S[i]`. Each iteration takes `Θ(lgn)`, so in worst case will take `Θ(nlgn)`.
+
+So the overall running time in worst case is `Θ(nlgn)`.
