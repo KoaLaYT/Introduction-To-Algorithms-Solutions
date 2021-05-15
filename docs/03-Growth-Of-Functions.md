@@ -60,3 +60,55 @@ Same as 3.1-6. See https://walkccc.me/CLRS/Chap03/3.1/.
 > Give corresponding definitions for `Ω(g(n, m))` and `Θ(g(n, m))`.
 
 <img src="https://imgur.com/vXCNnaq.png" alt="Screenshot of E3.1-8#2" width="50%" />
+
+### 3.2-1
+
+> Show that if `f(n)` and `g(n)` are monotonically increasing functions, then so are the functions `f(n) + g(n)` and `f(g(n))`, and if `f(n)` and `g(n)` are in addition nonnegative, then `f(n) * g(n)` is monotonically increasing.
+
+<img src="https://imgur.com/5mXxWyU.png" alt="Screenshot of E3.2-1" width="50%" />
+
+### 3.2-2
+
+> Prove equation (3.16).
+
+<img src="https://imgur.com/uPJrTdH.png" alt="Screenshot of E3.2-2" width="50%" />
+
+### 3.2-3
+
+> Prove equation (3.19). Also prove that `n! = ω(2^n)` and `n! = o(n^n)`.
+
+Using the **Stirling’s approximation**, the result is fairly obvious.
+
+<img src="https://imgur.com/q4qUzj4.png" alt="Screenshot of E3.2-3" width="50%" />
+
+### 3.2-4
+
+> Is the function `⎡lgn⎤!` polynomially bounded? Is the function `⎡lglgn⎤!` polynomially bounded?
+
+I have no idea how to prove... See https://walkccc.me/CLRS/Chap03/3.2/.
+
+### 3.2-5
+
+> Which is asymptotically larger: `lg(lg*(n))` or `lg*(lgn)`?
+
+See https://walkccc.me/CLRS/Chap03/3.2/.
+
+### 3.2-6
+
+> Show that the golden ratio and its conjugate both satisfy the equation `x2 = x + 1`.
+
+<img src="https://imgur.com/HnDNl2f.png" alt="Screenshot of E3.2-6" width="50%" />
+
+### 3.2-7
+
+> Prove by induction that the `ith` Fibonacci number satisfies the equality:
+>
+> <img src="https://imgur.com/ISVWJAO.png" alt="Screenshot of E3.2-7#1" width="25%" />
+
+<img src="https://imgur.com/fRZLSpr.png" alt="Screenshot of E3.2-7#2" width="50%" />
+
+### 3.2-8
+
+> Show that `klnk = Θ(n)` implies `k = Θ(n / ln(n))`.
+
+See https://walkccc.me/CLRS/Chap03/3.2/.
